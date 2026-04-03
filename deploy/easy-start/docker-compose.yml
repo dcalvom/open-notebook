@@ -4,6 +4,7 @@ services:
   surrealdb:
     image: surrealdb/surrealdb:v2
     command: start --log info --user ${SURREAL_USER} --pass ${SURREAL_PASSWORD} rocksdb:/mydata/mydatabase.db
+    user: root
     ports:
       - "${HOST_DB_PORT:-8000}:8000"
     volumes:
